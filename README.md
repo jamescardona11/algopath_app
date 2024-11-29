@@ -36,7 +36,7 @@ My idea is put that paths in the app, and show the user the progress of the lear
 
 
 ## Project Roadmap and task list
-Full detail about the project can be found in the [Task manager](https://jamescardona11.notion.site/AlgoPath-Planner-14da5e264987809a8dcdd5ce07784082?pvs=4).
+Full detail about the project can be found in the [Task manager](https://jamescardona11.notion.site/14da5e26498781139039f76f11a53d36?v=14da5e2649878122bb72000c7c3e3de6&pvs=4).
 
 
 Overview
@@ -57,6 +57,6 @@ Overview
 ## How to Contribute
 - Please open the notion page, review the task list and assign yourself a task.
 - If you have any questions, please open an issue or contact me via LinkedIn.
-- Create a PR with the task structure to be tracked. [TAS-X] GitHub PR Title
+- Create a PR with the task structure to be tracked. [TASK-X] GitHub PR Title
 - USE SQUASH MERGE to merge PRs
 - Once the PR is merged, to update the task list.
