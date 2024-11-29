@@ -53,3 +53,10 @@ Overview
 - [] Dark mode
 - [] Flutter Web
 - [] Flutter Desktop
+
+## How to Contribute
+- Please open the notion page, review the task list and assign yourself a task.
+- If you have any questions, please open an issue or contact me via LinkedIn.
+- Create a PR with the task structure to be tracked. [TAS-X] GitHub PR Title
+- USE SQUASH MERGE to merge PRs
+- Once the PR is merged, to update the task list.
