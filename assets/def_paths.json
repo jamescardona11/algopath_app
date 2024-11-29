@@ -1,0 +1,2426 @@
+[
+  {
+    "id": 1,
+    "name": "Blind 75",
+    "slug": "bind75",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": false,
+    "notes": "",
+    "order": 20,
+    "problemsIds": [],
+    "sections": [
+      {
+        "id": 1,
+        "name": "Arrays",
+        "slug": "arrays",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          1,
+          121,
+          217,
+          238,
+          53,
+          152,
+          153,
+          33,
+          15,
+          11
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Binary",
+        "slug": "binary",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          371,
+          191,
+          338,
+          268,
+          190
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Dynamic Programming",
+        "slug": "dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          70,
+          322,
+          300,
+          1143,
+          139,
+          39,
+          198,
+          213,
+          91,
+          62,
+          55
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Graph",
+        "slug": "graph",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          133,
+          207,
+          417,
+          200,
+          128,
+          269,
+          261,
+          323
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Interval",
+        "slug": "interval",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          57,
+          56,
+          435,
+          252,
+          253
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Linked List",
+        "slug": "linked-list",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          206,
+          141,
+          21,
+          23,
+          19,
+          143
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Matrix",
+        "slug": "matrix",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          73,
+          54,
+          48,
+          79
+        ]
+      },
+      {
+        "id": 8,
+        "name": "String",
+        "slug": "string",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          3,
+          424,
+          76,
+          242,
+          49,
+          20,
+          125,
+          5,
+          647,
+          271
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Tree",
+        "slug": "tree",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          104,
+          100,
+          226,
+          124,
+          102,
+          297,
+          572,
+          105,
+          98,
+          230,
+          235,
+          208,
+          211,
+          212
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Heap",
+        "slug": "heap",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          23,
+          347,
+          295
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Grind 75",
+    "slug": "grind75",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 10,
+    "problemsIds": [],
+    "sections": [
+      {
+        "id": 1,
+        "name": "Array",
+        "slug": "array",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          1,
+          121,
+          169,
+          217,
+          57,
+          15,
+          238,
+          39,
+          56,
+          75,
+          11
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Stack",
+        "slug": "stack",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          20,
+          232,
+          150,
+          155,
+          42,
+          224,
+          84
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Linked List",
+        "slug": "linked-list",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          21,
+          141,
+          206,
+          876,
+          146
+        ]
+      },
+      {
+        "id": 4,
+        "name": "String",
+        "slug": "string",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          125,
+          242,
+          409,
+          3,
+          8,
+          5,
+          438,
+          76
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Binary Tree",
+        "slug": "binary-tree",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          226,
+          110,
+          543,
+          104,
+          102,
+          236,
+          199,
+          105,
+          297
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Binary Search",
+        "slug": "binary-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          704,
+          278,
+          33,
+          981,
+          1235
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Graph",
+        "slug": "graph",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          733,
+          542,
+          133,
+          207,
+          200,
+          994,
+          721,
+          79,
+          310,
+          127
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Tree",
+        "slug": "tree",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          235,
+          98,
+          230
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          383
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Dynamic Programming",
+        "slug": "dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          70,
+          53,
+          322,
+          416,
+          62
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Binary",
+        "slug": "binary",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          67
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Heap",
+        "slug": "heap",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          973,
+          621,
+          295,
+          23
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Trie",
+        "slug": "trie",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          208,
+          139
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Recursion",
+        "slug": "recursion",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          46,
+          78,
+          17
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Matrix",
+        "slug": "matrix",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          54
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Grind 169",
+    "slug": "grind169",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 30,
+    "problemsIds": [],
+    "sections": [
+      {
+        "id": 1,
+        "name": "Array",
+        "slug": "array",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          1,
+          121,
+          169,
+          217,
+          252,
+          283,
+          977,
+          57,
+          15,
+          238,
+          39,
+          56,
+          75,
+          11,
+          134,
+          128,
+          189,
+          525,
+          560,
+          253,
+          16,
+          435,
+          759,
+          239
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Stack",
+        "slug": "stack",
+        "notes": "",
+        "isEnabled": true,
+        "problemsIds": [
+          20,
+          232,
+          844,
+          150,
+          155,
+          739,
+          394,
+          735,
+          227,
+          42,
+          224,
+          84,
+          895,
+          32
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Linked List",
+        "slug": "linked-list",
+        "notes": "",
+        "isEditable": false,
+        "problemsIds": [
+          21,
+          141,
+          206,
+          876,
+          234,
+          146,
+          19,
+          24,
+          328,
+          2,
+          148,
+          143,
+          61,
+          25
+        ]
+      },
+      {
+        "id": 4,
+        "name": "String",
+        "slug": "string",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          125,
+          242,
+          409,
+          14,
+          3,
+          8,
+          5,
+          438,
+          49,
+          424,
+          179,
+          271,
+          76,
+          336
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Tree",
+        "slug": "tree",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          226,
+          110,
+          543,
+          104,
+          100,
+          101,
+          572,
+          102,
+          236,
+          199,
+          105,
+          113,
+          662,
+          103,
+          437,
+          863,
+          297,
+          124
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Binary Search",
+        "slug": "binary-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          704,
+          278,
+          33,
+          981,
+          74,
+          153,
+          1235,
+          4
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Graph",
+        "slug": "graph",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          733,
+          542,
+          133,
+          207,
+          200,
+          994,
+          721,
+          79,
+          310,
+          417,
+          1730,
+          261,
+          210,
+          323,
+          1197,
+          787,
+          127,
+          329,
+          212,
+          269,
+          815
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Tree",
+        "slug": "tree",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          235,
+          108,
+          98,
+          230,
+          285
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          383,
+          380,
+          41
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Dynamic Programming",
+        "slug": "dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          70,
+          53,
+          322,
+          416,
+          62,
+          198,
+          152,
+          300,
+          55,
+          221,
+          91,
+          377
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Binary",
+        "slug": "binary",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          67,
+          338,
+          191,
+          136,
+          268,
+          190,
+          287
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Math",
+        "slug": "math",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          13,
+          9,
+          528,
+          50,
+          7
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Heap",
+        "slug": "heap",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          973,
+          621,
+          692,
+          658,
+          215,
+          295,
+          23,
+          632
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Trie",
+        "slug": "trie",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          208,
+          139,
+          211,
+          588
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Recursion",
+        "slug": "recursion",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          46,
+          78,
+          17,
+          31,
+          22,
+          51
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Matrix",
+        "slug": "matrix",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          54,
+          36,
+          48,
+          73,
+          37
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Queue",
+        "slug": "queue",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          362
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Top Interview",
+    "slug": "top-interview",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 12,
+    "problemsIds": [
+      1,
+      13,
+      20,
+      21,
+      121,
+      125,
+      169,
+      217,
+      242,
+      41,
+      206,
+      347,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      14,
+      15,
+      17,
+      19,
+      22,
+      23,
+      26,
+      28,
+      29,
+      33,
+      34,
+      38,
+      42,
+      44,
+      46,
+      48,
+      49,
+      50,
+      53,
+      54,
+      55,
+      56,
+      62,
+      66,
+      69,
+      70,
+      73,
+      75,
+      76,
+      78,
+      79,
+      84,
+      88,
+      91,
+      94,
+      98,
+      101,
+      102,
+      103,
+      104,
+      105,
+      108,
+      116,
+      118,
+      122,
+      124,
+      127,
+      128,
+      130,
+      131,
+      134,
+      136,
+      138,
+      139,
+      140,
+      141,
+      146,
+      148,
+      149,
+      150,
+      152,
+      155,
+      160,
+      162,
+      163,
+      166,
+      171,
+      172,
+      179,
+      189,
+      190,
+      191,
+      198,
+      200,
+      202,
+      204,
+      207,
+      208,
+      210,
+      212,
+      215,
+      218,
+      227,
+      230,
+      234,
+      236,
+      237,
+      238,
+      239,
+      240,
+      251,
+      253,
+      268,
+      269,
+      277,
+      279,
+      283,
+      285,
+      287,
+      289,
+      295,
+      297,
+      300,
+      308,
+      315,
+      322,
+      324,
+      326,
+      328,
+      329,
+      334,
+      340,
+      341,
+      344,
+      348,
+      350,
+      371,
+      378,
+      380,
+      384,
+      387,
+      395,
+      412,
+      454
+    ],
+    "sections": []
+  },
+  {
+    "id": 5,
+    "name": "Top Liked",
+    "slug": "top-liked",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 13,
+    "problemsIds": [
+      1,
+      20,
+      21,
+      35,
+      121,
+      169,
+      41,
+      206,
+      347,
+      2,
+      3,
+      4,
+      5,
+      11,
+      15,
+      17,
+      19,
+      22,
+      23,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      39,
+      42,
+      45,
+      46,
+      48,
+      49,
+      51,
+      53,
+      54,
+      55,
+      56,
+      62,
+      64,
+      70,
+      72,
+      73,
+      74,
+      75,
+      76,
+      78,
+      79,
+      84,
+      94,
+      98,
+      101,
+      102,
+      104,
+      105,
+      108,
+      114,
+      124,
+      128,
+      131,
+      136,
+      138,
+      139,
+      141,
+      142,
+      146,
+      148,
+      152,
+      153,
+      155,
+      160,
+      189,
+      198,
+      199,
+      200,
+      207,
+      208,
+      215,
+      226,
+      230,
+      234,
+      236,
+      238,
+      239,
+      240,
+      283,
+      287,
+      295,
+      300,
+      322,
+      378,
+      394,
+      416,
+      437,
+      438,
+      543,
+      560,
+      647,
+      739,
+      768,
+      1036,
+      1250
+    ],
+    "sections": []
+  },
+  {
+    "id": 6,
+    "name": "Sixty Basic",
+    "slug": "sixty-basic",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 14,
+    "problemsIds": [
+      1,
+      20,
+      35,
+      121,
+      206,
+      347,
+      2,
+      3,
+      6,
+      8,
+      22,
+      31,
+      33,
+      39,
+      46,
+      49,
+      50,
+      53,
+      62,
+      63,
+      78,
+      82,
+      83,
+      98,
+      102,
+      103,
+      104,
+      105,
+      108,
+      111,
+      112,
+      122,
+      127,
+      139,
+      141,
+      142,
+      153,
+      198,
+      200,
+      209,
+      213,
+      252,
+      253,
+      276,
+      283,
+      300,
+      322,
+      323,
+      349,
+      373,
+      387,
+      392,
+      560,
+      617,
+      695,
+      789,
+      791,
+      795,
+      965,
+      1056
+    ],
+    "sections": []
+  },
+  {
+    "id": 8,
+    "name": "Curated Algo",
+    "slug": "curated-algo",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 15,
+    "problemsIds": [
+      157,
+      158,
+      159,
+      161,
+      163,
+      170,
+      186,
+      243,
+      244,
+      245,
+      247,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      259,
+      261,
+      265,
+      266,
+      267,
+      269,
+      270,
+      271,
+      272,
+      276,
+      277,
+      280,
+      281,
+      285,
+      286,
+      291,
+      296,
+      298,
+      302,
+      305,
+      308,
+      311,
+      314,
+      317,
+      320,
+      323,
+      325,
+      333,
+      339,
+      340,
+      346,
+      348,
+      353,
+      358,
+      359,
+      360,
+      361,
+      362,
+      364,
+      366,
+      369,
+      370,
+      422,
+      425,
+      439,
+      465,
+      471,
+      484,
+      487,
+      490,
+      499,
+      505,
+      509,
+      527,
+      531,
+      536,
+      545,
+      549,
+      562,
+      568,
+      582,
+      588,
+      604,
+      616,
+      624,
+      631,
+      635,
+      642,
+      644,
+      651,
+      656,
+      694,
+      716,
+      723,
+      727,
+      734,
+      737,
+      743,
+      751,
+      758,
+      761,
+      762,
+      765,
+      771,
+      785,
+      786,
+      788,
+      850,
+      865,
+      1051,
+      1052,
+      1058,
+      1059,
+      1060,
+      1066,
+      1067,
+      1074,
+      1085,
+      1090,
+      1091,
+      1099,
+      1100,
+      1101,
+      1102,
+      1123,
+      1124,
+      1125,
+      1131,
+      1134,
+      1143,
+      1144,
+      1150,
+      1152,
+      1165,
+      1167,
+      1176,
+      1177,
+      1178,
+      1192,
+      1200,
+      1213,
+      1233,
+      1271,
+      1345,
+      1366,
+      1374,
+      1391,
+      1404,
+      1618,
+      1624,
+      1634,
+      1650,
+      1665,
+      1672,
+      1681,
+      1687,
+      1703
+    ],
+    "sections": []
+  },
+  {
+    "id": 9,
+    "name": "Deep Learning - Patterns",
+    "slug": "patterns",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 2,
+    "sections": [
+      {
+        "id": 1,
+        "name": "Sliding Window",
+        "slug": "sliding-window",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          643,
+          121,
+          209,
+          904,
+          3,
+          424,
+          1004,
+          567,
+          438,
+          76,
+          30,
+          239,
+          1838,
+          713,
+          1208,
+          1493,
+          1695,
+          2009,
+          2024
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          1,
+          26,
+          27,
+          167,
+          125,
+          977,
+          15,
+          16,
+          259,
+          713,
+          75,
+          18,
+          11,
+          844,
+          1574,
+          42
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Fast & Slow pointers",
+        "slug": "fast-slow-pointers",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          141,
+          142,
+          202,
+          876,
+          234,
+          143,
+          457
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Merge Intervals",
+        "slug": "merge-intervals",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          56,
+          57,
+          986,
+          11,
+          42,
+          1094,
+          761
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Cyclic Sort",
+        "slug": "cyclic-sort",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          268,
+          448,
+          287,
+          442,
+          41,
+          1539
+        ]
+      },
+      {
+        "id": 6,
+        "name": "In-place Reversal of a LinkedList",
+        "slug": "in-place-reversal-of-a-linked-list",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          206,
+          92,
+          25,
+          61
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Tree Breadth First Search",
+        "slug": "tree-breadth-first-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          102,
+          107,
+          103,
+          637,
+          1161,
+          111,
+          104,
+          116,
+          199
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Tree Depth First Search",
+        "slug": "tree-depth-first-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          112,
+          113,
+          257,
+          129,
+          437,
+          543,
+          124
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Subsets",
+        "slug": "subsets",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          78,
+          90,
+          46,
+          784,
+          22,
+          320,
+          241,
+          95,
+          96
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Modified Binary Search",
+        "slug": "modified-binary-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          704,
+          35,
+          744,
+          34,
+          786,
+          1200,
+          33,
+          81,
+          153,
+          154
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Bitwise XOR",
+        "slug": "bitwise-xor",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          136,
+          260,
+          1009,
+          832
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Top 'K' Elements",
+        "slug": "top-k-elements",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          215,
+          973,
+          1126,
+          347,
+          451,
+          703,
+          658,
+          1481,
+          767,
+          358,
+          651,
+          895
+        ]
+      },
+      {
+        "id": 13,
+        "name": "K-way merge",
+        "slug": "k-way-merge",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          23,
+          4,
+          378,
+          632,
+          373
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Dynamic Programming",
+        "slug": "dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          2008,
+          416,
+          2035,
+          39,
+          494,
+          1547,
+          322,
+          518,
+          2045,
+          509,
+          70,
+          45,
+          746,
+          198,
+          516,
+          5,
+          647,
+          1312,
+          1178,
+          132,
+          1143,
+          300,
+          1092,
+          72,
+          97
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Topological Sort",
+        "slug": "topological-sort",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          207,
+          210,
+          269,
+          444,
+          310
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Fast Learning - Patterns",
+    "slug": "patterns",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 1,
+    "sections": [
+      {
+        "id": 1,
+        "name": "Prefix Sum",
+        "slug": "prefix-sum",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          303,
+          525,
+          560
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          167,
+          15,
+          11
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Sliding Window",
+        "slug": "sliding-window",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          643,
+          3,
+          76
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Fast & Slow Pointers",
+        "slug": "fast-slow-pointers",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          141,
+          202,
+          287
+        ]
+      },
+      {
+        "id": 5,
+        "name": "LinkedList In-place Reversal",
+        "slug": "linkedlist-in-place-reversal",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          206,
+          92,
+          24
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Monotonic Stack",
+        "slug": "monotonic-stack",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          496,
+          739,
+          84
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Top K Elements",
+        "slug": "top-k-elements",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          215,
+          347,
+          373
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Overlapping Intervals",
+        "slug": "overlapping-intervals",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          56,
+          57,
+          435
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Modified Binary Search",
+        "slug": "modified-binary-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          33,
+          153,
+          240
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Binary Tree Traversal",
+        "slug": "binary-tree-traversal",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          257,
+          230,
+          124
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Depth-First Search (DFS)",
+        "slug": "depth-first-search-dfs",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          133,
+          113,
+          210
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Breadth-First Search (BFS)",
+        "slug": "breadth-first-search-bfs",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          102,
+          994,
+          127
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Matrix Traversal",
+        "slug": "matrix-traversal",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          733,
+          200,
+          130
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Backtracking",
+        "slug": "backtracking",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          46,
+          78,
+          51
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          70,
+          198,
+          322,
+          1143,
+          322,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Dynamic Programming Patterns",
+    "slug": "dp-patterns",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 8,
+    "sections": [
+      {
+        "id": 1,
+        "name": "Fibonacci Sequence",
+        "slug": "fibonacci-sequence",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          70,
+          509,
+          746
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Kadane's Algorithm",
+        "slug": "kadanes-algorithm",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          53,
+          918,
+          152
+        ]
+      },
+      {
+        "id": 3,
+        "name": "0/1 Knapsack",
+        "slug": "0-1-knapsack",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          416,
+          494,
+          1049
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Unbounded Knapsack",
+        "slug": "unbounded-knapsack",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          322,
+          518,
+          279
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Longest Common Subsequence",
+        "slug": "longest-common-subsequence",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          1143,
+          583,
+          1092
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Longest Increasing Subsequence",
+        "slug": "longest-increasing-subsequence",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          300,
+          673,
+          354
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Palindromic Subsequence",
+        "slug": "palindromic-subsequence",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          516,
+          647,
+          1312
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Edit Distance",
+        "slug": "edit-distance",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          72,
+          583,
+          712
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Subset Sum",
+        "slug": "subset-sum",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          416,
+          494,
+          698
+        ]
+      },
+      {
+        "id": 10,
+        "name": "String Partition",
+        "slug": "string-partition",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          139,
+          132,
+          472
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Catalan Numbers",
+        "slug": "catalan-numbers",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          96,
+          22
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Matrix Chain Multiplication",
+        "slug": "matrix-chain-multiplication",
+        "notes": "",
+        "isEnabled": true,
+        "problemsIds": [
+          1039,
+          312,
+          1000
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Count Distinct Ways",
+        "slug": "count-distinct-ways",
+        "notes": "",
+        "isEditable": false,
+        "problemsIds": [
+          91,
+          2266
+        ]
+      },
+      {
+        "id": 14,
+        "name": "DP on Grids",
+        "slug": "dp-on-grids",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          62,
+          64,
+          329
+        ]
+      },
+      {
+        "id": 15,
+        "name": "DP on Trees",
+        "slug": "dp-on-trees",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          337,
+          124,
+          968
+        ]
+      },
+      {
+        "id": 16,
+        "name": "DP on Graphs",
+        "slug": "dp-on-graphs",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          787,
+          1334
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Digit DP",
+        "slug": "digit-dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          357,
+          233,
+          902
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Bitmasking DP",
+        "slug": "bitmasking-dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          1986,
+          2305,
+          847
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Probability DP",
+        "slug": "probability-dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          688,
+          808,
+          837
+        ]
+      },
+      {
+        "id": 20,
+        "name": "State Machine DP",
+        "slug": "state-machine-dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          309,
+          123
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Neetcode Roadmap",
+    "slug": "neetcode-roadmap",
+    "description": "",
+    "isEditable": false,
+    "isEnabled": true,
+    "notes": "",
+    "order": 3,
+    "sections": [
+      {
+        "id": 2,
+        "name": "Arrays",
+        "slug": "arrays",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          217,
+          242,
+          1,
+          49,
+          347,
+          238,
+          36,
+          347
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Graph",
+        "slug": "graph",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          128,
+          238,
+          36,
+          128
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          125,
+          167,
+          15,
+          11,
+          42
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Sliding Window",
+        "slug": "sliding-window",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          121,
+          3,
+          424,
+          567,
+          76,
+          239
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Stack",
+        "slug": "stack",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          20,
+          155,
+          150,
+          22,
+          739,
+          853,
+          84
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Binary Search",
+        "slug": "binary-search",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          95,
+          74,
+          875,
+          33,
+          153,
+          981,
+          4
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Linked List",
+        "slug": "linked-list",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          92,
+          21,
+          143,
+          19,
+          138,
+          2,
+          141,
+          287,
+          146,
+          23,
+          25
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Tree",
+        "slug": "tree",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          226,
+          104,
+          543,
+          110,
+          100,
+          572,
+          235,
+          102,
+          199,
+          1448,
+          98,
+          230,
+          105,
+          124,
+          297
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Tries",
+        "slug": "tries",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          208,
+          211,
+          212
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Heap / Priority Queue",
+        "slug": "heap-priority-queue",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          703,
+          1046,
+          973,
+          215,
+          621,
+          355,
+          295
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Backtracking",
+        "slug": "backtracking",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          78,
+          39,
+          46,
+          90,
+          40,
+          79,
+          131,
+          17,
+          51
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Graphs",
+        "slug": "graphs",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          200,
+          133,
+          695,
+          417,
+          130,
+          994,
+          207,
+          210,
+          684,
+          126
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Advanced Graphs",
+        "slug": "advanced-graphs",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          332,
+          1584,
+          778,
+          787,
+          125,
+          269
+        ]
+      },
+      {
+        "id": 15,
+        "name": "1D Dynamic Programming",
+        "slug": "1d-dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          70,
+          746,
+          198,
+          213,
+          5,
+          647,
+          91,
+          322,
+          152,
+          139,
+          300,
+          416
+        ]
+      },
+      {
+        "id": 16,
+        "name": "2D Dynamic Programming",
+        "slug": "2d-dp",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          62,
+          121,
+          518,
+          494,
+          97,
+          329,
+          115,
+          72,
+          312,
+          10,
+          15
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Greedy",
+        "slug": "greedy",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          53,
+          45,
+          45,
+          134,
+          846,
+          1899,
+          763,
+          678
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Intervals",
+        "slug": "intervals",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          57,
+          56,
+          435,
+          1851,
+          11,
+          42
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Math & Geometry",
+        "slug": "math-geometry",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          48,
+          54,
+          73,
+          202,
+          66,
+          50,
+          43,
+          2013
+        ]
+      },
+      {
+        "id": 20,
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "notes": "",
+        "isEnabled": true,
+        "isEditable": false,
+        "problemsIds": [
+          136,
+          191,
+          338,
+          190,
+          268,
+          371,
+          7
+        ]
+      }
+    ]
+  }
+]
