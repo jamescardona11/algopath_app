@@ -1,6 +1,16 @@
+import 'package:algopath_app/utils/logger/logger.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'data/database/init/init_database_data.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final initDb = InitDatabaseData();
+  await initDb.init();
+  AppLogger().d('Database initialized');
+  AppLogger().d(initDb.log);
+
   runApp(const MainApp());
 }
 

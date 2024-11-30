@@ -67,6 +67,7 @@ assets/cfg/_dev_app_settings.json
 # DART
 di.config.dart
 **.g.dart
+**.freezed.dart
 
 env.g.dart
 env.dart
