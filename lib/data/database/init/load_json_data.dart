@@ -12,7 +12,7 @@ class LoadJsonData {
   // If the version is not the same as previous, we will reload the data
   final String _assetVersionPath = 'assets/version.json';
 
-  Future<List<JsonType>> loadLearningPaths() async {
+  Future<List<JsonType>> loadPaths() async {
     try {
       // Load the JSON file from assets
       final String jsonString = await rootBundle.loadString(_assetPathsPath);
