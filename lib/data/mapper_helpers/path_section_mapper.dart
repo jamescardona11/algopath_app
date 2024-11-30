@@ -1,4 +1,4 @@
-import 'package:algopath_app/domain/problem_path/path_section.dart';
+import 'package:algopath_app/domain/problem_path/section/path_section.dart';
 import 'package:algopath_app/domain/types/json_type.dart';
 
 abstract class PathSectionMapper {

@@ -1,7 +1,7 @@
 import 'package:algopath_app/domain/types/json_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'path_section.dart';
+import 'section/path_section.dart';
 
 part 'problem_path.freezed.dart';
 part 'problem_path.g.dart';
