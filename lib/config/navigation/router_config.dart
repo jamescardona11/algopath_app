@@ -28,6 +28,10 @@ final router = GoRouter(
           builder: (context, state) => const DashboardPage(),
         ),
         GoRoute(
+          path: '/path',
+          redirect: (context, state) => '/',
+        ),
+        GoRoute(
           path: '/path/:slug',
           builder: (context, state) {
             final slug = state.pathParameters['slug'];
@@ -50,25 +54,25 @@ final router = GoRouter(
 class GoRouterNavigatorObserver extends NavigatorObserver {
   @override
   void didPush(Route route, Route? previousRoute) {
-    AppLogger().i('GoRouter: didPush: $route');
+    AppLogger().i('GoRouter: didPush: ${route.settings.name}');
     super.didPush(route, previousRoute);
   }
 
   @override
   void didPop(Route route, Route? previousRoute) {
-    AppLogger().i('GoRouter: didPop: $route');
+    AppLogger().i('GoRouter: didPop: ${route.settings.name}');
     super.didPop(route, previousRoute);
   }
 
   @override
   void didRemove(Route route, Route? previousRoute) {
-    AppLogger().i('GoRouter: didRemove: $route');
+    AppLogger().i('GoRouter: didRemove: ${route.settings.name}');
     super.didRemove(route, previousRoute);
   }
 
   @override
   void didReplace({Route? oldRoute, Route? newRoute}) {
-    AppLogger().i('GoRouter: didReplace: $oldRoute -> $newRoute');
+    AppLogger().i('GoRouter: didReplace: ${oldRoute?.settings.name} -> ${newRoute?.settings.name}');
     super.didReplace(oldRoute: oldRoute, newRoute: newRoute);
   }
 }
