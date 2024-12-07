@@ -29,5 +29,5 @@ abstract class AppColors {
   static const Color grey200 = Color(0xFFced4da);
   static const Color grey300 = Color(0xFFA0A2A5);
 
-  static const Color scaffoldBackground = Color(0xFFE7E6F0);
+  static const Color scaffoldBackground = Colors.white;
 }

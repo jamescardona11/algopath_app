@@ -16,7 +16,7 @@ class ProblemPathHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final progress = shrinkOffset;
-    
+
     return Material(
       elevation: overlapsContent ? 4.0 : 0.0,
       child: Container(
