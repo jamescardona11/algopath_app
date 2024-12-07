@@ -16,7 +16,8 @@ class ProblemPathPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
+      body: Container(
+        width: 1200,
         padding: EdgeInsets.all(AppDimens.defaultPadding),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -26,7 +27,7 @@ class ProblemPathPage extends StatelessWidget {
             const SizedBox(height: 40),
             Expanded(
               child: SizedBox(
-                width: 1250,
+                // width: 1250,
                 child: ListView(
                   children: [
                     ProblemListItem(
