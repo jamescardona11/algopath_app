@@ -1,6 +1,8 @@
 import 'package:algopath_app/utils/logger/logger.dart';
 import 'package:flutter/material.dart';
 
+import 'config/navigation/router_config.dart';
+import 'config/theme/app_theme.dart';
 import 'data/database/init/init_database_data.dart';
 
 Future<void> main() async {
@@ -19,12 +21,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      title: 'AlgoPath',
+      theme: AppTheme.appTheme(),
+      routerConfig: router,
     );
   }
 }
