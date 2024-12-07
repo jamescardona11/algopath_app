@@ -23,6 +23,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'AlgoPath',
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.appTheme(),
       routerConfig: router,
     );
