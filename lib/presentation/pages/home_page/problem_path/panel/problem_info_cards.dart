@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'problem_calendar.dart';
+import '../header/problem_calendar.dart';
 import 'progress_card.dart';
 
-class ProblemPathHeader extends StatelessWidget {
-  const ProblemPathHeader({
+class ProblemInfoCards extends StatelessWidget {
+  const ProblemInfoCards({
     super.key,
     required this.shrinkOffset,
     required this.overlapsContent,
@@ -85,7 +85,7 @@ class ProblemPathHeader extends StatelessWidget {
 class SliverProblemPathHeader extends SliverPersistentHeaderDelegate {
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return ProblemPathHeader(
+    return ProblemInfoCards(
       shrinkOffset: shrinkOffset / (maxExtent - minExtent),
       overlapsContent: overlapsContent,
     );
