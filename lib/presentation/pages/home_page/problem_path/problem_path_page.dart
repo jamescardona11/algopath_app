@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'problem_path_provider.dart';
 import 'widgets/panel/right_info_panel.dart';
 
-class ProblemPathPage extends StatelessWidget {
+class ProblemPathPage extends StatefulWidget {
   const ProblemPathPage({
     super.key,
     required this.slug,
@@ -16,10 +16,31 @@ class ProblemPathPage extends StatelessWidget {
   final String slug;
 
   @override
+  State<ProblemPathPage> createState() => _ProblemPathPageState();
+}
+
+class _ProblemPathPageState extends State<ProblemPathPage> {
+  late ProblemPathProvider _problemPathProvider;
+
+  @override
+  void initState() {
+    super.initState();
+    _problemPathProvider = ProblemPathProvider(widget.slug);
+  }
+
+  @override
+  void didUpdateWidget(covariant ProblemPathPage oldWidget) {
+    if (oldWidget.slug != widget.slug) {
+      _problemPathProvider.dispose();
+      _problemPathProvider = ProblemPathProvider(widget.slug);
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ProblemPathProvider>(
-      create: (context) => ProblemPathProvider(slug),
-      lazy: false,
+    return ChangeNotifierProvider<ProblemPathProvider>.value(
+      value: _problemPathProvider,
       child: Scaffold(
         body: Row(
           children: [
