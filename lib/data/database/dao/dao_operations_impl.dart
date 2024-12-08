@@ -72,7 +72,11 @@ class DaoOperationImpl implements DaoOperations {
       if (db == null) return Stream.value([]);
 
       return _dbCollection(collectionName)
-          .query(finder: Finder(filter: Filter.inList(idKey, ids)))
+          .query(finder: Finder(filter: Filter.custom((snapshot) {
+            final element = snapshot.value as Map;
+            final id = element[idKey].toString();
+            return ids.contains(id);
+          })))
           .onSnapshots(db)
           .map((e) => e.map((snapshot) => snapshot.value).toList());
     });

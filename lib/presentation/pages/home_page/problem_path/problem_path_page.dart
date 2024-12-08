@@ -2,7 +2,9 @@ import 'package:algopath_app/config/res/app_dimens.dart';
 import 'package:algopath_app/presentation/pages/home_page/problem_path/widgets/header/progress_header.dart';
 import 'package:algopath_app/presentation/widgets/problem_item.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'problem_path_provider.dart';
 import 'widgets/panel/right_info_panel.dart';
 
 class ProblemPathPage extends StatelessWidget {
@@ -15,206 +17,210 @@ class ProblemPathPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Row(
-        children: [
-          Expanded(
-            child: CustomScrollView(
-              slivers: [
-                const SliverToBoxAdapter(
-                  child: ProgressHeader(
-                    completed: 3,
-                    total: 75,
+    return ChangeNotifierProvider<ProblemPathProvider>(
+      create: (context) => ProblemPathProvider(slug),
+      lazy: false,
+      child: Scaffold(
+        body: Row(
+          children: [
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  const SliverToBoxAdapter(
+                    child: ProgressHeader(
+                      completed: 3,
+                      total: 75,
+                    ),
                   ),
-                ),
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: _StickySearchDelegate(),
-                ),
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    const ProblemListItem(
-                      number: '416',
-                      title: 'Partition Equal Subset Sum',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '322',
-                      title: 'Coin Change',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '124',
-                      title: 'Binary Tree Maximum Path Sum',
-                      tags: ['Depth-first Search', 'Tree', 'Hard'],
-                    ),
-                    const ProblemListItem(
-                      number: '494',
-                      title: 'Target Sum',
-                      tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '1',
-                      title: 'Two Sum',
-                      tags: ['Easy'],
-                    ),
-                    const ProblemListItem(
-                      number: '3',
-                      title: 'Longest Substring Without Repeating Characters',
-                      tags: ['Two Pointers', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '33',
-                      title: 'Search in Rotated Sorted Array',
-                      tags: ['Binary Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '416',
-                      title: 'Partition Equal Subset Sum',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '322',
-                      title: 'Coin Change',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '124',
-                      title: 'Binary Tree Maximum Path Sum',
-                      tags: ['Depth-first Search', 'Tree', 'Hard'],
-                    ),
-                    const ProblemListItem(
-                      number: '494',
-                      title: 'Target Sum',
-                      tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '1',
-                      title: 'Two Sum',
-                      tags: ['Easy'],
-                    ),
-                    const ProblemListItem(
-                      number: '3',
-                      title: 'Longest Substring Without Repeating Characters',
-                      tags: ['Two Pointers', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '33',
-                      title: 'Search in Rotated Sorted Array',
-                      tags: ['Binary Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '416',
-                      title: 'Partition Equal Subset Sum',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '322',
-                      title: 'Coin Change',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '124',
-                      title: 'Binary Tree Maximum Path Sum',
-                      tags: ['Depth-first Search', 'Tree', 'Hard'],
-                    ),
-                    const ProblemListItem(
-                      number: '494',
-                      title: 'Target Sum',
-                      tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '1',
-                      title: 'Two Sum',
-                      tags: ['Easy'],
-                    ),
-                    const ProblemListItem(
-                      number: '3',
-                      title: 'Longest Substring Without Repeating Characters',
-                      tags: ['Two Pointers', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '33',
-                      title: 'Search in Rotated Sorted Array',
-                      tags: ['Binary Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '416',
-                      title: 'Partition Equal Subset Sum',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '322',
-                      title: 'Coin Change',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '124',
-                      title: 'Binary Tree Maximum Path Sum',
-                      tags: ['Depth-first Search', 'Tree', 'Hard'],
-                    ),
-                    const ProblemListItem(
-                      number: '494',
-                      title: 'Target Sum',
-                      tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '1',
-                      title: 'Two Sum',
-                      tags: ['Easy'],
-                    ),
-                    const ProblemListItem(
-                      number: '3',
-                      title: 'Longest Substring Without Repeating Characters',
-                      tags: ['Two Pointers', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '33',
-                      title: 'Search in Rotated Sorted Array',
-                      tags: ['Binary Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '416',
-                      title: 'Partition Equal Subset Sum',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '322',
-                      title: 'Coin Change',
-                      tags: ['Dynamic Programming', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '124',
-                      title: 'Binary Tree Maximum Path Sum',
-                      tags: ['Depth-first Search', 'Tree', 'Hard'],
-                    ),
-                    const ProblemListItem(
-                      number: '494',
-                      title: 'Target Sum',
-                      tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '1',
-                      title: 'Two Sum',
-                      tags: ['Easy'],
-                    ),
-                    const ProblemListItem(
-                      number: '3',
-                      title: 'Longest Substring Without Repeating Characters',
-                      tags: ['Two Pointers', 'Medium'],
-                    ),
-                    const ProblemListItem(
-                      number: '33',
-                      title: 'Search in Rotated Sorted Array',
-                      tags: ['Binary Search', 'Medium'],
-                    ),
-                  ]),
-                ),
-              ],
+                  SliverPersistentHeader(
+                    pinned: true,
+                    delegate: _StickySearchDelegate(),
+                  ),
+                  SliverList(
+                    delegate: SliverChildListDelegate([
+                      const ProblemListItem(
+                        number: '416',
+                        title: 'Partition Equal Subset Sum',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '322',
+                        title: 'Coin Change',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '124',
+                        title: 'Binary Tree Maximum Path Sum',
+                        tags: ['Depth-first Search', 'Tree', 'Hard'],
+                      ),
+                      const ProblemListItem(
+                        number: '494',
+                        title: 'Target Sum',
+                        tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '1',
+                        title: 'Two Sum',
+                        tags: ['Easy'],
+                      ),
+                      const ProblemListItem(
+                        number: '3',
+                        title: 'Longest Substring Without Repeating Characters',
+                        tags: ['Two Pointers', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '33',
+                        title: 'Search in Rotated Sorted Array',
+                        tags: ['Binary Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '416',
+                        title: 'Partition Equal Subset Sum',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '322',
+                        title: 'Coin Change',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '124',
+                        title: 'Binary Tree Maximum Path Sum',
+                        tags: ['Depth-first Search', 'Tree', 'Hard'],
+                      ),
+                      const ProblemListItem(
+                        number: '494',
+                        title: 'Target Sum',
+                        tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '1',
+                        title: 'Two Sum',
+                        tags: ['Easy'],
+                      ),
+                      const ProblemListItem(
+                        number: '3',
+                        title: 'Longest Substring Without Repeating Characters',
+                        tags: ['Two Pointers', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '33',
+                        title: 'Search in Rotated Sorted Array',
+                        tags: ['Binary Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '416',
+                        title: 'Partition Equal Subset Sum',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '322',
+                        title: 'Coin Change',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '124',
+                        title: 'Binary Tree Maximum Path Sum',
+                        tags: ['Depth-first Search', 'Tree', 'Hard'],
+                      ),
+                      const ProblemListItem(
+                        number: '494',
+                        title: 'Target Sum',
+                        tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '1',
+                        title: 'Two Sum',
+                        tags: ['Easy'],
+                      ),
+                      const ProblemListItem(
+                        number: '3',
+                        title: 'Longest Substring Without Repeating Characters',
+                        tags: ['Two Pointers', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '33',
+                        title: 'Search in Rotated Sorted Array',
+                        tags: ['Binary Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '416',
+                        title: 'Partition Equal Subset Sum',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '322',
+                        title: 'Coin Change',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '124',
+                        title: 'Binary Tree Maximum Path Sum',
+                        tags: ['Depth-first Search', 'Tree', 'Hard'],
+                      ),
+                      const ProblemListItem(
+                        number: '494',
+                        title: 'Target Sum',
+                        tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '1',
+                        title: 'Two Sum',
+                        tags: ['Easy'],
+                      ),
+                      const ProblemListItem(
+                        number: '3',
+                        title: 'Longest Substring Without Repeating Characters',
+                        tags: ['Two Pointers', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '33',
+                        title: 'Search in Rotated Sorted Array',
+                        tags: ['Binary Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '416',
+                        title: 'Partition Equal Subset Sum',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '322',
+                        title: 'Coin Change',
+                        tags: ['Dynamic Programming', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '124',
+                        title: 'Binary Tree Maximum Path Sum',
+                        tags: ['Depth-first Search', 'Tree', 'Hard'],
+                      ),
+                      const ProblemListItem(
+                        number: '494',
+                        title: 'Target Sum',
+                        tags: ['Dynamic Programming', 'Depth-first Search', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '1',
+                        title: 'Two Sum',
+                        tags: ['Easy'],
+                      ),
+                      const ProblemListItem(
+                        number: '3',
+                        title: 'Longest Substring Without Repeating Characters',
+                        tags: ['Two Pointers', 'Medium'],
+                      ),
+                      const ProblemListItem(
+                        number: '33',
+                        title: 'Search in Rotated Sorted Array',
+                        tags: ['Binary Search', 'Medium'],
+                      ),
+                    ]),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const RightInfoPanel(),
-        ],
+            const RightInfoPanel(),
+          ],
+        ),
       ),
     );
   }
