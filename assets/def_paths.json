@@ -1291,7 +1291,7 @@
   {
     "id": 9,
     "name": "Deep Learning - Patterns",
-    "slug": "patterns",
+    "slug": "deep-patterns",
     "description": "",
     "isEditable": false,
     "isEnabled": true,
@@ -1598,7 +1598,7 @@
   {
     "id": 9,
     "name": "Fast Learning - Patterns",
-    "slug": "patterns",
+    "slug": "fast-patterns",
     "description": "",
     "isEditable": false,
     "isEnabled": true,
