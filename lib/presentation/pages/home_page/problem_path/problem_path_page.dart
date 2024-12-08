@@ -1,9 +1,9 @@
 import 'package:algopath_app/config/res/app_dimens.dart';
-import 'package:algopath_app/presentation/pages/home_page/problem_path/header/progress_header.dart';
+import 'package:algopath_app/presentation/pages/home_page/problem_path/widgets/header/progress_header.dart';
 import 'package:algopath_app/presentation/widgets/problem_item.dart';
 import 'package:flutter/material.dart';
 
-import 'panel/right_info_panel.dart';
+import 'widgets/panel/right_info_panel.dart';
 
 class ProblemPathPage extends StatelessWidget {
   const ProblemPathPage({
