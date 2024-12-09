@@ -2,10 +2,10 @@ import 'package:algopath_app/config/res/app_dimens.dart';
 import 'package:algopath_app/presentation/pages/home_page/problem_path/widgets/header/progress_header.dart';
 import 'package:algopath_app/presentation/widgets/problem_item.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
+import 'package:provider/provider.dart';
 
-import 'problem_path_provider.dart';
+import 'provider/problem_path_provider.dart';
 import 'widgets/panel/right_info_panel.dart';
 
 class ProblemPathPage extends StatefulWidget {
@@ -28,7 +28,6 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
   void initState() {
     super.initState();
     _problemPathProvider = ProblemPathProvider(widget.slug);
-    // Initially expand all sections
     _expandedSections.addAll(
       List.generate(((_problemPathProvider.problems.length / 10).ceil()), (i) => i),
     );
@@ -68,11 +67,9 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                       (provider.problems.length / 10).ceil(),
                       (sectionIndex) {
                         final startIndex = sectionIndex * 10;
-                        final endIndex = (startIndex + 10 < provider.problems.length)
-                            ? startIndex + 10
-                            : provider.problems.length;
+                        final endIndex = (startIndex + 10 < provider.problems.length) ? startIndex + 10 : provider.problems.length;
                         final isExpanded = _expandedSections.contains(sectionIndex);
-                        
+
                         return SliverStickyHeader(
                           header: Container(
                             height: 50.0,
@@ -88,9 +85,7 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                                 ),
                                 IconButton(
                                   icon: Icon(
-                                    isExpanded 
-                                        ? Icons.keyboard_arrow_up
-                                        : Icons.keyboard_arrow_down,
+                                    isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
                                   ),
                                   onPressed: () {
                                     setState(() {
@@ -111,8 +106,8 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                                     (context, index) {
                                       final itemIndex = startIndex + index;
                                       if (itemIndex >= provider.problems.length) return null;
-                                      
-                                      return ProblemListItem(
+
+                                      return ProblemItem(
                                         number: provider.problems[itemIndex].id.toString(),
                                         title: provider.problems[itemIndex].title,
                                         tags: provider.problems[itemIndex].topicTags,

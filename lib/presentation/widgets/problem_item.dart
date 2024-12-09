@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ProblemListItem extends StatelessWidget {
+class ProblemItem extends StatelessWidget {
   final String number;
   final String title;
   final List<String> tags;
   final VoidCallback? onChatContext;
 
-  const ProblemListItem({
+  const ProblemItem({
     super.key,
     required this.number,
     required this.title,

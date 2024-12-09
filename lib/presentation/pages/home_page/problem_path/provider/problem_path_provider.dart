@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 
 class ProblemPathProvider extends ChangeNotifier {
   final String _slug;
+  final DBService _db = DBService();
 
   ProblemPathProvider(this._slug) {
     _initSubscription();
   }
 
-  final DBService _db = DBService();
   StreamSubscription? _problemsStream;
   List<Problem> _problems = [];
   ProblemPath? _problemPath;
@@ -32,9 +32,13 @@ class ProblemPathProvider extends ChangeNotifier {
       return;
     }
 
+    final problemIds = (_problemPath!.problemsIds.isNotEmpty
+        ? _problemPath!.problemsIds
+        : _problemPath!.sections.expand((section) => section.problemsIds));
+
     _problemsStream = _db
         .run(CollectionName.problems)
-        .watchByIds(ids: _problemPath!.problemsIds.map((e) => e.toString()).toList())
+        .watchByIds(ids: problemIds.map((e) => e.toString()).toList())
         .map((jsonList) => ProblemMapper.fromJsonList(jsonList))
         .listen((problems) {
       _problems = problems;

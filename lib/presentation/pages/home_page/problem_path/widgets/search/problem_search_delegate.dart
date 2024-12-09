@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:algopath_app/presentation/widgets/problem_item.dart';
+import 'package:flutter/material.dart';
 
 class ProblemSearchDelegate extends SearchDelegate<String> {
   @override
@@ -36,13 +36,13 @@ class ProblemSearchDelegate extends SearchDelegate<String> {
     return ListView(
       children: [
         if (query.toLowerCase().contains('dynamic'))
-          ProblemListItem(
+          ProblemItem(
             number: '416',
             title: 'Partition Equal Subset Sum',
             tags: ['Dynamic Programming', 'Medium'],
           ),
         if (query.toLowerCase().contains('tree'))
-          ProblemListItem(
+          ProblemItem(
             number: '124',
             title: 'Binary Tree Maximum Path Sum',
             tags: ['Depth-first Search', 'Tree', 'Hard'],
