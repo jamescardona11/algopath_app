@@ -17,23 +17,24 @@ class ProblemPathProvider extends ChangeNotifier {
   final DBService _db = DBService();
   StreamSubscription? _problemsStream;
   List<Problem> _problems = [];
+  ProblemPath? _problemPath;
 
   List<Problem> get problems => _problems;
 
   Future<void> _initSubscription() async {
-    final path = await _db.run(CollectionName.problemPaths).read(id: _slug).then((json) {
+    _problemPath = await _db.run(CollectionName.problemPaths).read(id: _slug).then((json) {
       if (json == null) return null;
       return ProblemPath.fromJson(json);
     });
 
-    if (path == null) {
+    if (_problemPath == null) {
       // Handle error
       return;
     }
 
     _problemsStream = _db
         .run(CollectionName.problems)
-        .watchByIds(ids: path.problemsIds.map((e) => e.toString()).toList())
+        .watchByIds(ids: _problemPath!.problemsIds.map((e) => e.toString()).toList())
         .map((jsonList) => ProblemMapper.fromJsonList(jsonList))
         .listen((problems) {
       _problems = problems;

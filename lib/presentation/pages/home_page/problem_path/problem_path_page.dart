@@ -22,11 +22,16 @@ class ProblemPathPage extends StatefulWidget {
 
 class _ProblemPathPageState extends State<ProblemPathPage> {
   late ProblemPathProvider _problemPathProvider;
+  final Set<int> _expandedSections = <int>{};
 
   @override
   void initState() {
     super.initState();
     _problemPathProvider = ProblemPathProvider(widget.slug);
+    // Initially expand all sections
+    _expandedSections.addAll(
+      List.generate(((_problemPathProvider.problems.length / 10).ceil()), (i) => i),
+    );
   }
 
   @override
@@ -66,33 +71,57 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                         final endIndex = (startIndex + 10 < provider.problems.length)
                             ? startIndex + 10
                             : provider.problems.length;
+                        final isExpanded = _expandedSections.contains(sectionIndex);
                         
                         return SliverStickyHeader(
                           header: Container(
                             height: 50.0,
                             color: Theme.of(context).colorScheme.surface,
                             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Problems ${startIndex + 1} - $endIndex',
-                              style: Theme.of(context).textTheme.titleMedium,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    'Problems ${startIndex + 1} - $endIndex',
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                ),
+                                IconButton(
+                                  icon: Icon(
+                                    isExpanded 
+                                        ? Icons.keyboard_arrow_up
+                                        : Icons.keyboard_arrow_down,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      if (isExpanded) {
+                                        _expandedSections.remove(sectionIndex);
+                                      } else {
+                                        _expandedSections.add(sectionIndex);
+                                      }
+                                    });
+                                  },
+                                ),
+                              ],
                             ),
                           ),
-                          sliver: SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                              (context, index) {
-                                final itemIndex = startIndex + index;
-                                if (itemIndex >= provider.problems.length) return null;
-                                
-                                return ProblemListItem(
-                                  number: provider.problems[itemIndex].id.toString(),
-                                  title: provider.problems[itemIndex].title,
-                                  tags: provider.problems[itemIndex].topicTags,
-                                );
-                              },
-                              childCount: endIndex - startIndex,
-                            ),
-                          ),
+                          sliver: isExpanded
+                              ? SliverList(
+                                  delegate: SliverChildBuilderDelegate(
+                                    (context, index) {
+                                      final itemIndex = startIndex + index;
+                                      if (itemIndex >= provider.problems.length) return null;
+                                      
+                                      return ProblemListItem(
+                                        number: provider.problems[itemIndex].id.toString(),
+                                        title: provider.problems[itemIndex].title,
+                                        tags: provider.problems[itemIndex].topicTags,
+                                      );
+                                    },
+                                    childCount: endIndex - startIndex,
+                                  ),
+                                )
+                              : const SliverToBoxAdapter(child: SizedBox()),
                         );
                       },
                     ),
