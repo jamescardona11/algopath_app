@@ -7,16 +7,19 @@ class ProblemItem extends StatelessWidget {
   final Problem problem;
   final List<TopicTag> tags;
   final VoidCallback? onChatPressed;
+  final VoidCallback? onBookmarkPressed;
 
   const ProblemItem({
     super.key,
     required this.problem,
     required this.tags,
     this.onChatPressed,
+    this.onBookmarkPressed,
   });
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return InkWell(
       onTap: () {},
       child: Container(
@@ -32,9 +35,10 @@ class ProblemItem extends StatelessWidget {
               width: 40,
               child: Text(
                 problem.id.toString(),
-                style: TextStyle(
+                style: textTheme.bodyMedium?.copyWith(
                   color: Colors.grey.shade600,
                   fontSize: 14,
+                  fontWeight: FontWeight.w100,
                 ),
               ),
             ),
@@ -44,10 +48,7 @@ class ProblemItem extends StatelessWidget {
                 children: [
                   Text(
                     problem.title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 8),
                   Wrap(
@@ -67,9 +68,9 @@ class ProblemItem extends StatelessWidget {
                         ),
                         child: Text(
                           tag.name,
-                          style: TextStyle(
+                          style: textTheme.bodySmall?.copyWith(
                             color: textColor,
-                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       );
@@ -86,11 +87,13 @@ class ProblemItem extends StatelessWidget {
                     Icons.chat_bubble_outline,
                     color: Colors.grey.shade400,
                   ),
-                  tooltip: 'Add to chat context',
                 ),
-                Icon(
-                  Icons.bookmark_border,
-                  color: Colors.grey.shade400,
+                IconButton(
+                  onPressed: onBookmarkPressed,
+                  icon: Icon(
+                    Icons.bookmark_border,
+                    color: Colors.grey.shade400,
+                  ),
                 ),
               ],
             ),

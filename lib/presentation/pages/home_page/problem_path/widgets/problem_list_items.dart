@@ -1,3 +1,4 @@
+import 'package:algopath_app/config/res/app_dimens.dart';
 import 'package:algopath_app/domain/problem/problem.dart';
 import 'package:algopath_app/domain/problem/topic_tag/topic_tag.dart';
 import 'package:algopath_app/presentation/widgets/problem_item.dart';
@@ -16,18 +17,21 @@ class ProblemListItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, index) {
-          final problem = problems[index];
-          final tags = problem.topicTags.map((tag) => topicTags[tag]).whereNotNull().toList();
+    return SliverPadding(
+      padding: const EdgeInsets.symmetric(horizontal: AppDimens.defaultPadding),
+      sliver: SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            final problem = problems[index];
+            final tags = problem.topicTags.map((tag) => topicTags[tag]).whereNotNull().toList();
 
-          return ProblemItem(
-            problem: problem,
-            tags: tags,
-          );
-        },
-        childCount: problems.length,
+            return ProblemItem(
+              problem: problem,
+              tags: tags,
+            );
+          },
+          childCount: problems.length,
+        ),
       ),
     );
   }
