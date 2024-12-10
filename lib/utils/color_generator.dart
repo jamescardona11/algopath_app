@@ -2,51 +2,69 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-abstract class ColorGenerator {
-  static final Random _random = Random();
+class ColorGenerator {
+  final Random _random = Random();
+  final List<Color> _baseColors = [
+    Colors.red,
+    Colors.pink,
+    Colors.purple,
+    Colors.deepPurple,
+    Colors.indigo,
+    Colors.blue,
+    Colors.lightBlue,
+    Colors.cyan,
+    Colors.teal,
+    Colors.green,
+    Colors.lightGreen,
+    Colors.lime,
+    Colors.yellow,
+    Colors.amber,
+    Colors.orange,
+    Colors.deepOrange,
+    Colors.blueGrey,
+    Colors.indigoAccent,
+    Colors.tealAccent,
+    Colors.greenAccent,
+    const Color(0xffFF0000),
+    const Color(0xff92AA83),
+    const Color(0xff994636),
+    const Color(0xffC8AD55),
+    const Color(0xff355691),
+    const Color(0xff5F5AA2),
+    const Color(0xffFFFBBD),
+    const Color(0xff78C0E0),
+    const Color(0xff022B3A),
+    const Color(0xffFFE45E),
+  ];
 
-  /// Returns a random material color
-  static Color getRandomColor() {
-    // List of material colors excluding blacks, whites, and browns
-    final List<MaterialColor> colors = [
-      Colors.red,
-      Colors.pink,
-      Colors.purple,
-      Colors.deepPurple,
-      Colors.indigo,
-      Colors.blue,
-      Colors.lightBlue,
-      Colors.cyan,
-      Colors.teal,
-      Colors.green,
-      Colors.lightGreen,
-      Colors.lime,
-      Colors.yellow,
-      Colors.amber,
-      Colors.orange,
-      Colors.deepOrange,
-    ];
+  final List<Color> _unusedColors = [];
 
-    // Get a random color from the list
-    final baseColor = colors[_random.nextInt(colors.length)];
+  Color getUniqueColor() {
+    if (_unusedColors.isEmpty) {
+      _unusedColors.addAll(_baseColors);
+    }
 
-    // Get a random shade (100-900, excluding 50)
-    final shades = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-    final shade = shades[_random.nextInt(shades.length)];
-
-    return baseColor[shade]!;
+    final index = _random.nextInt(_unusedColors.length);
+    return _unusedColors.removeAt(index);
   }
 
-  /// Returns a random pastel color
-  static Color getRandomPastelColor() {
-    const double saturation = 0.6; // Lower saturation for pastel effect
-    const double brightness = 0.95; // Higher brightness for pastel effect
+  static (Color backgroundColor, Color textColor) getPairColor(Color baseColor) {
+    final hslColor = HSLColor.fromColor(baseColor);
 
-    return HSLColor.fromAHSL(
-      1.0,
-      _random.nextDouble() * 360, // Random hue
-      saturation,
-      brightness,
+    final backgroundColor = HSLColor.fromAHSL(
+      0.65,
+      hslColor.hue,
+      0.6,
+      0.95,
     ).toColor();
+
+    final textColor = HSLColor.fromAHSL(
+      1.0,
+      hslColor.hue,
+      0.7,
+      0.35,
+    ).toColor();
+
+    return (backgroundColor, textColor);
   }
 }

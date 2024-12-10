@@ -142,12 +142,15 @@ class InitDatabaseData {
     final Set<String> newTags = newProblems.expand((p) => p.topicTags).where((t) => !dbTags.containsKey(t)).toSet();
 
     _log += '\n New Tags: ${newTags.length}';
+    final colorGenerator = ColorGenerator();
     await _db.run(CollectionName.tags).bulkUpsert(
           items: newTags
-              .map((tag) => TopicTag(
-                    id: tag,
-                    color: ColorGenerator.getRandomColor().value,
-                  ).toJson())
+              .map(
+                (tag) => TopicTag(
+                  id: tag,
+                  color: colorGenerator.getUniqueColor().value,
+                ).toJson(),
+              )
               .toList(),
         );
   }
