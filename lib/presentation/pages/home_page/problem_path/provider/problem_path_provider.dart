@@ -11,7 +11,7 @@ import 'package:algopath_app/utils/strings_extension.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
-import 'problem_data.dart';
+import 'section_data.dart';
 
 class ProblemPathProvider extends ChangeNotifier {
   final String _slug;
@@ -22,13 +22,17 @@ class ProblemPathProvider extends ChangeNotifier {
   }
 
   StreamSubscription? _problemsStream;
-  List<ListElementData> _listElementData = [];
-  List<Problem> _problems = [];
   ProblemPath? _problemPath;
+  List<Problem> _allPathProblems = [];
+
+  Map<SectionData, List<Problem>> _groupedProblems = {};
   SortProblemsBy _sortProblemsBy = SortProblemsBy.none;
   GroupProblemsBy _groupProblemsBy = GroupProblemsBy.none;
 
-  List<ListElementData> get listElementData => _listElementData;
+  Map<SectionData, List<Problem>> get groupedProblems => _groupedProblems;
+  List<SectionData> get sections => _groupedProblems.keys.toList();
+
+  bool get isEmptySections => sections.isEmpty || sections.first.title == noGroup;
 
   void changeGroupProblemsBy(GroupProblemsBy groupProblemsBy) {
     _groupProblemsBy = groupProblemsBy;
@@ -60,7 +64,7 @@ class ProblemPathProvider extends ChangeNotifier {
         .watchByIds(ids: problemIds.map((e) => e.toString()).toList())
         .map((jsonList) => ProblemMapper.fromJsonList(jsonList))
         .listen((problems) {
-      _problems = problems;
+      _allPathProblems = problems;
       _addListElementData();
 
       notifyListeners();
@@ -68,7 +72,7 @@ class ProblemPathProvider extends ChangeNotifier {
   }
 
   void _addListElementData() {
-    _listElementData = _groupProblemsBy.when(
+    _groupedProblems = _groupProblemsBy.when(
       {
         GroupProblemsBy.none: () => _groupByNone(),
         GroupProblemsBy.byDifficulty: () => _groupByDifficulty(),
@@ -78,52 +82,48 @@ class ProblemPathProvider extends ChangeNotifier {
     );
   }
 
-  List<ListElementData> _groupByNone() {
-    return _sortElements(_problems.map((p) => ProblemData(p)).toList());
+  Map<SectionData, List<Problem>> _groupByNone() {
+    final problems = _sortElements(_allPathProblems);
+
+    return {SectionData(title: noGroup): problems};
   }
 
-  List<ListElementData> _groupByDifficulty() {
-    final List<ListElementData> result = [];
+  Map<SectionData, List<Problem>> _groupByDifficulty() {
+    return _allPathProblems.groupListsBy((p) => p.difficulty).map((key, value) {
+      final section = SectionData(title: key.capitalize());
+      final problems = _sortElements(value);
 
-    _problems.groupListsBy((p) => p.difficulty).forEach((key, value) {
-      result.add(SectionData<String>(section: key.capitalize()));
-      final elements = _sortElements(value.map((p) => ProblemData(p)).toList());
-      result.addAll(elements);
+      return MapEntry(section, problems);
     });
-
-    return result;
   }
 
-  List<ListElementData> _groupByTopic() {
-    final List<ListElementData> result = [];
-
-    _problems.groupListsBy((p) => p.topicTags.firstOrNull ?? 'No topic').forEach((key, value) {
-      result.add(SectionData<String>(section: key.capitalize()));
-      final elements = _sortElements(value.map((p) => ProblemData(p)).toList());
-      result.addAll(elements);
+  Map<SectionData, List<Problem>> _groupByTopic() {
+    return _allPathProblems.groupListsBy((p) => p.topicTags.firstOrNull ?? 'No topic').map((key, value) {
+      final section = SectionData(title: key.capitalize());
+      final problems = _sortElements(value);
+      return MapEntry(section, problems);
     });
-
-    return result;
   }
 
-  List<ListElementData> _groupBySection() {
+  Map<SectionData, List<Problem>> _groupBySection() {
     if (_problemPath!.sections.isEmpty) return _groupByNone();
-    final List<ListElementData> result = [];
 
-    for (var section in _problemPath!.sections) {
-      result.add(SectionData<String>(section: section.name.capitalize()));
-      final elements = _sortElements(_problems.where((p) => section.problemsIds.contains(p.id)).map((p) => ProblemData(p)).toList());
-      result.addAll(elements);
-    }
+    return Map.fromEntries(
+      _problemPath!.sections.map((pathSection) {
+        final section = SectionData(title: pathSection.name.capitalize());
+        final problemsBySection = _allPathProblems.where((p) => pathSection.problemsIds.contains(p.id)).toList();
+        final problems = _sortElements(problemsBySection);
 
-    return result;
+        return MapEntry(section, problems);
+      }),
+    );
   }
 
-  List<ProblemData> _sortElements(List<ProblemData> elements) {
+  List<Problem> _sortElements(List<Problem> elements) {
     return _sortProblemsBy.when(
       {
-        SortProblemsBy.byDifficulty: () => elements.sorted((a, b) => a.problem.difficultyValue.compareTo(b.problem.difficultyValue)),
-        SortProblemsBy.byName: () => elements.sorted((a, b) => a.problem.title.compareTo(b.problem.title)),
+        SortProblemsBy.byDifficulty: () => elements.sorted((a, b) => a.difficultyValue.compareTo(b.difficultyValue)),
+        SortProblemsBy.byName: () => elements.sorted((a, b) => a.title.compareTo(b.title)),
       },
       orElse: () => elements,
     );
@@ -134,4 +134,6 @@ class ProblemPathProvider extends ChangeNotifier {
     _problemsStream?.cancel();
     super.dispose();
   }
+
+  static const String noGroup = 'NO GROUP';
 }
