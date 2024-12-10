@@ -7,7 +7,6 @@ import 'package:algopath_app/data/mapper_helpers/problem_mapper.dart';
 import 'package:algopath_app/domain/problem/problem.dart';
 import 'package:algopath_app/domain/problem_path/problem_path.dart';
 import 'package:algopath_app/presentation/pages/home_page/problem_path/provider/filters.dart';
-import 'package:algopath_app/utils/strings_extension.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
@@ -25,14 +24,13 @@ class ProblemPathProvider extends ChangeNotifier {
   ProblemPath? _problemPath;
   List<Problem> _allPathProblems = [];
 
-  Map<SectionData, List<Problem>> _groupedProblems = {};
+  List<SectionData> _groupedProblems = [];
   SortProblemsBy _sortProblemsBy = SortProblemsBy.none;
   GroupProblemsBy _groupProblemsBy = GroupProblemsBy.none;
 
-  Map<SectionData, List<Problem>> get groupedProblems => _groupedProblems;
-  List<SectionData> get sections => _groupedProblems.keys.toList();
-
-  bool get isEmptySections => sections.isEmpty || sections.first.title == noGroup;
+  List<SectionData> get groupedProblems => _groupedProblems;
+  List<Problem> get allPathProblems => _allPathProblems;
+  bool get hasSections => groupedProblems.isNotEmpty && !groupedProblems.first.isNoGroup;
 
   void changeGroupProblemsBy(GroupProblemsBy groupProblemsBy) {
     _groupProblemsBy = groupProblemsBy;
@@ -82,41 +80,42 @@ class ProblemPathProvider extends ChangeNotifier {
     );
   }
 
-  Map<SectionData, List<Problem>> _groupByNone() {
+  List<SectionData> _groupByNone() {
     final problems = _sortElements(_allPathProblems);
-
-    return {SectionData(title: noGroup): problems};
+    return [SectionData(problems: problems)];
   }
 
-  Map<SectionData, List<Problem>> _groupByDifficulty() {
-    return _allPathProblems.groupListsBy((p) => p.difficulty).map((key, value) {
-      final section = SectionData(title: key.capitalize());
-      final problems = _sortElements(value);
-
-      return MapEntry(section, problems);
-    });
+  List<SectionData> _groupByDifficulty() {
+    return _allPathProblems
+        .groupListsBy((p) => p.difficulty)
+        .map((key, value) {
+          final problems = _sortElements(value);
+          return MapEntry(key, SectionData(title: key, problems: problems));
+        })
+        .values
+        .toList();
   }
 
-  Map<SectionData, List<Problem>> _groupByTopic() {
-    return _allPathProblems.groupListsBy((p) => p.topicTags.firstOrNull ?? 'No topic').map((key, value) {
-      final section = SectionData(title: key.capitalize());
-      final problems = _sortElements(value);
-      return MapEntry(section, problems);
-    });
+  List<SectionData> _groupByTopic() {
+    return _allPathProblems
+        .groupListsBy((p) => p.topicTags.firstOrNull ?? 'No topic')
+        .map((key, value) {
+          final problems = _sortElements(value);
+          return MapEntry(key, SectionData(title: key, problems: problems));
+        })
+        .values
+        .toList();
   }
 
-  Map<SectionData, List<Problem>> _groupBySection() {
+  List<SectionData> _groupBySection() {
     if (_problemPath!.sections.isEmpty) return _groupByNone();
 
-    return Map.fromEntries(
-      _problemPath!.sections.map((pathSection) {
-        final section = SectionData(title: pathSection.name.capitalize());
-        final problemsBySection = _allPathProblems.where((p) => pathSection.problemsIds.contains(p.id)).toList();
-        final problems = _sortElements(problemsBySection);
+    return _problemPath!.sections.map((pathSection) {
+      final problemsBySection = _allPathProblems.where((p) => pathSection.problemsIds.contains(p.id)).toList();
+      final problems = _sortElements(problemsBySection);
 
-        return MapEntry(section, problems);
-      }),
-    );
+      return SectionData(title: pathSection.name, problems: problems);
+    }).toList();
   }
 
   List<Problem> _sortElements(List<Problem> elements) {
