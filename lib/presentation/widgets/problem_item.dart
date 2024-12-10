@@ -1,64 +1,19 @@
+import 'package:algopath_app/domain/problem/problem.dart';
+import 'package:algopath_app/domain/problem/topic_tag/topic_tag.dart';
+import 'package:algopath_app/utils/color_generator.dart';
 import 'package:flutter/material.dart';
 
 class ProblemItem extends StatelessWidget {
-  final String number;
-  final String title;
-  final List<String> tags;
-  final VoidCallback? onChatContext;
+  final Problem problem;
+  final List<TopicTag> tags;
+  final VoidCallback? onChatPressed;
 
   const ProblemItem({
     super.key,
-    required this.number,
-    required this.title,
+    required this.problem,
     required this.tags,
-    this.onChatContext,
+    this.onChatPressed,
   });
-
-  Color getTagColor(String tag) {
-    switch (tag.toLowerCase()) {
-      case 'dynamic programming':
-        return Colors.green.shade100;
-      case 'depth-first search':
-        return Colors.orange.shade100;
-      case 'tree':
-        return Colors.blue.shade100;
-      case 'two pointers':
-        return Colors.purple.shade100;
-      case 'binary search':
-        return Colors.pink.shade100;
-      case 'easy':
-        return Colors.green.shade100;
-      case 'medium':
-        return Colors.orange.shade100;
-      case 'hard':
-        return Colors.red.shade100;
-      default:
-        return Colors.grey.shade100;
-    }
-  }
-
-  Color getTagTextColor(String tag) {
-    switch (tag.toLowerCase()) {
-      case 'dynamic programming':
-        return Colors.green.shade700;
-      case 'depth-first search':
-        return Colors.orange.shade700;
-      case 'tree':
-        return Colors.blue.shade700;
-      case 'two pointers':
-        return Colors.purple.shade700;
-      case 'binary search':
-        return Colors.pink.shade700;
-      case 'easy':
-        return Colors.green.shade700;
-      case 'medium':
-        return Colors.orange.shade700;
-      case 'hard':
-        return Colors.red.shade700;
-      default:
-        return Colors.grey.shade700;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +31,7 @@ class ProblemItem extends StatelessWidget {
             SizedBox(
               width: 40,
               child: Text(
-                number,
+                problem.id.toString(),
                 style: TextStyle(
                   color: Colors.grey.shade600,
                   fontSize: 14,
@@ -88,7 +43,7 @@ class ProblemItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    problem.title,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -99,19 +54,21 @@ class ProblemItem extends StatelessWidget {
                     spacing: 8,
                     runSpacing: 8,
                     children: tags.map((tag) {
+                      final (boxColor, textColor) = ColorGenerator.getPairColor(Color(tag.color));
+
                       return Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 8,
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: getTagColor(tag),
+                          color: boxColor,
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
-                          tag,
+                          tag.name,
                           style: TextStyle(
-                            color: getTagTextColor(tag),
+                            color: textColor,
                             fontSize: 12,
                           ),
                         ),
@@ -124,7 +81,7 @@ class ProblemItem extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                  onPressed: onChatContext,
+                  onPressed: onChatPressed,
                   icon: Icon(
                     Icons.chat_bubble_outline,
                     color: Colors.grey.shade400,
