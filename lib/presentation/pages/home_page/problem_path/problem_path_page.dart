@@ -1,12 +1,12 @@
 import 'package:algopath_app/config/res/app_dimens.dart';
 import 'package:algopath_app/presentation/pages/home_page/problem_path/widgets/header/progress_header.dart';
-import 'package:algopath_app/presentation/widgets/problem_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:provider/provider.dart';
 
 import 'provider/problem_path_provider.dart';
 import 'widgets/panel/right_info_panel.dart';
+import 'widgets/problem_list_items.dart';
 
 class ProblemPathPage extends StatefulWidget {
   const ProblemPathPage({
@@ -22,15 +22,11 @@ class ProblemPathPage extends StatefulWidget {
 
 class _ProblemPathPageState extends State<ProblemPathPage> {
   late ProblemPathProvider _problemPathProvider;
-  final Set<int> _expandedSections = <int>{};
 
   @override
   void initState() {
     super.initState();
     _problemPathProvider = ProblemPathProvider(widget.slug);
-    _expandedSections.addAll(
-      List.generate(((_problemPathProvider.problems.length / 10).ceil()), (i) => i),
-    );
   }
 
   @override
@@ -63,63 +59,48 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                       pinned: true,
                       delegate: _StickySearchDelegate(),
                     ),
-                    ...List.generate(
-                      (provider.problems.length / 10).ceil(),
-                      (sectionIndex) {
-                        final startIndex = sectionIndex * 10;
-                        final endIndex = (startIndex + 10 < provider.problems.length) ? startIndex + 10 : provider.problems.length;
-                        final isExpanded = _expandedSections.contains(sectionIndex);
+                    if (provider.hasSections)
+                      ...List.generate(
+                        provider.groupedProblems.length,
+                        (sectionIndex) {
+                          final section = provider.groupedProblems[sectionIndex];
 
-                        return SliverStickyHeader(
-                          header: Container(
-                            height: 50.0,
-                            color: Theme.of(context).colorScheme.surface,
-                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    'Problems ${startIndex + 1} - $endIndex',
-                                    style: Theme.of(context).textTheme.titleMedium,
+                          return SliverStickyHeader(
+                            header: Container(
+                              height: 50.0,
+                              color: Theme.of(context).colorScheme.surface,
+                              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      section.title,
+                                      style: Theme.of(context).textTheme.titleMedium,
+                                    ),
                                   ),
-                                ),
-                                IconButton(
-                                  icon: Icon(
-                                    isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      if (isExpanded) {
-                                        _expandedSections.remove(sectionIndex);
-                                      } else {
-                                        _expandedSections.add(sectionIndex);
-                                      }
-                                    });
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                          sliver: isExpanded
-                              ? SliverList(
-                                  delegate: SliverChildBuilderDelegate(
-                                    (context, index) {
-                                      final itemIndex = startIndex + index;
-                                      if (itemIndex >= provider.problems.length) return null;
-
-                                      return ProblemItem(
-                                        number: provider.problems[itemIndex].id.toString(),
-                                        title: provider.problems[itemIndex].title,
-                                        tags: provider.problems[itemIndex].topicTags,
-                                      );
+                                  IconButton(
+                                    icon: Icon(
+                                      section.isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+                                    ),
+                                    onPressed: () {
+                                      // TODO
                                     },
-                                    childCount: endIndex - startIndex,
                                   ),
-                                )
-                              : const SliverToBoxAdapter(child: SizedBox()),
-                        );
-                      },
-                    ),
+                                ],
+                              ),
+                            ),
+                            sliver: section.isExpanded
+                                ? ProblemListItems(
+                                    problems: section.problems,
+                                  )
+                                : const SliverToBoxAdapter(child: SizedBox()),
+                          );
+                        },
+                      )
+                    else
+                      ProblemListItems(
+                        problems: provider.allPathProblems,
+                      )
                   ],
                 ),
               ),
