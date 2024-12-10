@@ -1,4 +1,3 @@
-import 'package:algopath_app/presentation/widgets/problem_item.dart';
 import 'package:flutter/material.dart';
 
 class ProblemSearchDelegate extends SearchDelegate<String> {
@@ -34,19 +33,19 @@ class ProblemSearchDelegate extends SearchDelegate<String> {
     }
 
     return ListView(
-      children: [
-        if (query.toLowerCase().contains('dynamic'))
-          ProblemItem(
-            number: '416',
-            title: 'Partition Equal Subset Sum',
-            tags: ['Dynamic Programming', 'Medium'],
-          ),
-        if (query.toLowerCase().contains('tree'))
-          ProblemItem(
-            number: '124',
-            title: 'Binary Tree Maximum Path Sum',
-            tags: ['Depth-first Search', 'Tree', 'Hard'],
-          ),
+      children: const [
+        // if (query.toLowerCase().contains('dynamic'))
+        //   ProblemItem(
+        //     number: '416',
+        //     title: 'Partition Equal Subset Sum',
+        //     tags: ['Dynamic Programming', 'Medium'],
+        //   ),
+        // if (query.toLowerCase().contains('tree'))
+        //   ProblemItem(
+        //     number: '124',
+        //     title: 'Binary Tree Maximum Path Sum',
+        //     tags: ['Depth-first Search', 'Tree', 'Hard'],
+        //   ),
         // Add more filtered items based on query
       ],
     );
