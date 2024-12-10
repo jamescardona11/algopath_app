@@ -92,6 +92,7 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                             sliver: section.isExpanded
                                 ? ProblemListItems(
                                     problems: section.problems,
+                                    topicTags: provider.topicTags,
                                   )
                                 : const SliverToBoxAdapter(child: SizedBox()),
                           );
@@ -100,6 +101,7 @@ class _ProblemPathPageState extends State<ProblemPathPage> {
                     else
                       ProblemListItems(
                         problems: provider.allPathProblems,
+                        topicTags: provider.topicTags,
                       )
                   ],
                 ),

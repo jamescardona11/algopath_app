@@ -4,7 +4,9 @@ import 'package:algopath_app/core/extensions/enum_extensions.dart';
 import 'package:algopath_app/data/database/collection_name.dart';
 import 'package:algopath_app/data/database/db_service.dart';
 import 'package:algopath_app/data/mapper_helpers/problem_mapper.dart';
+import 'package:algopath_app/data/mapper_helpers/topic_tag_mapper.dart';
 import 'package:algopath_app/domain/problem/problem.dart';
+import 'package:algopath_app/domain/problem/topic_tag/topic_tag.dart';
 import 'package:algopath_app/domain/problem_path/problem_path.dart';
 import 'package:algopath_app/presentation/pages/home_page/problem_path/provider/filters.dart';
 import 'package:collection/collection.dart';
@@ -18,18 +20,21 @@ class ProblemPathProvider extends ChangeNotifier {
 
   ProblemPathProvider(this._slug) {
     _initSubscription();
+    _readTopicTags();
   }
 
   StreamSubscription? _problemsStream;
   ProblemPath? _problemPath;
-  List<Problem> _allPathProblems = [];
+  final List<Problem> _allPathProblems = [];
+  final Map<String, TopicTag> _topicTags = {};
 
-  List<SectionData> _groupedProblems = [];
+  final List<SectionData> _groupedProblems = [];
   SortProblemsBy _sortProblemsBy = SortProblemsBy.none;
   GroupProblemsBy _groupProblemsBy = GroupProblemsBy.none;
 
   List<SectionData> get groupedProblems => _groupedProblems;
   List<Problem> get allPathProblems => _allPathProblems;
+  Map<String, TopicTag> get topicTags => _topicTags;
   bool get hasSections => groupedProblems.isNotEmpty && !groupedProblems.first.isNoGroup;
 
   void changeGroupProblemsBy(GroupProblemsBy groupProblemsBy) {
@@ -62,21 +67,32 @@ class ProblemPathProvider extends ChangeNotifier {
         .watchByIds(ids: problemIds.map((e) => e.toString()).toList())
         .map((jsonList) => ProblemMapper.fromJsonList(jsonList))
         .listen((problems) {
-      _allPathProblems = problems;
+      _allPathProblems.clear();
+      _allPathProblems.addAll(problems);
+
       _addListElementData();
 
       notifyListeners();
     });
   }
 
+  Future<void> _readTopicTags() async {
+    final topicTags = await _db.run(CollectionName.tags).readAll().then((jsonList) => TopicTagMapper.toMapTopicTags(jsonList));
+    _topicTags.addAll(topicTags);
+  }
+
   void _addListElementData() {
-    _groupedProblems = _groupProblemsBy.when(
-      {
-        GroupProblemsBy.none: () => _groupByNone(),
-        GroupProblemsBy.byDifficulty: () => _groupByDifficulty(),
-        GroupProblemsBy.byTopic: () => _groupByTopic(),
-        GroupProblemsBy.bySection: () => _groupBySection(),
-      },
+    _groupedProblems.clear();
+
+    _groupedProblems.addAll(
+      _groupProblemsBy.when(
+        {
+          GroupProblemsBy.none: () => _groupByNone(),
+          GroupProblemsBy.byDifficulty: () => _groupByDifficulty(),
+          GroupProblemsBy.byTopic: () => _groupByTopic(),
+          GroupProblemsBy.bySection: () => _groupBySection(),
+        },
+      ),
     );
   }
 
