@@ -34,7 +34,7 @@ abstract class AppException {
 }
 
 final class UnexpectedError extends AppException {
-  const UnexpectedError() : super('Encountered a Unexpected at an unrecoverable point. Terminating.');
+  const UnexpectedError({String? message}) : super(message ?? 'Encountered a Unexpected at an unrecoverable point. Terminating.');
 }
 
 final class FetchingDataError extends AppException {
