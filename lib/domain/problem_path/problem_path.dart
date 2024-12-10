@@ -11,9 +11,8 @@ const int defaultIconColor = 0xFF9E9E9E;
 @freezed
 class ProblemPath with _$ProblemPath {
   const factory ProblemPath({
-    required int id,
-    required String name,
     required String slug,
+    required String name,
     String? description,
     int? iconId,
     @Default(defaultIconColor) int iconColor,
@@ -29,5 +28,5 @@ class ProblemPath with _$ProblemPath {
 
   factory ProblemPath.fromJson(JsonType json) => _$ProblemPathFromJson(json);
 
-  String get dbId => id.toString();
+  String get dbId => slug;
 }

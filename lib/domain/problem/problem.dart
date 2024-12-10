@@ -35,4 +35,14 @@ class Problem with _$Problem {
   bool get isEasy => difficulty == 'Easy';
   bool get isMedium => difficulty == 'Medium';
   bool get isHard => difficulty == 'Hard';
+
+  int get difficultyValue {
+    switch (difficulty) {
+      case 'Easy':
+        return 2;
+      case 'Medium':
+        return 1;
+    }
+    return 0;
+  }
 }

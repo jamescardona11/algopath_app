@@ -59,7 +59,7 @@ class InitDatabaseData {
     final pathsJsonList = await _loadJson.loadPaths().then((jsonList) => jsonList
         .map((itemJson) => ProblemPath.fromJson(itemJson))
         .map((newItem) {
-          final dbPath = dbPaths[newItem.id];
+          final dbPath = dbPaths[newItem.slug];
           final itemSections = _getPathSections(newItem.toJson(), dbPath);
           final problemsIds = <int>{...dbPath?.problemsIds ?? [], ...newItem.problemsIds}.toList();
 
@@ -77,7 +77,7 @@ class InitDatabaseData {
         .toList());
 
     _log += '\n Paths Loaded: ${pathsJsonList.length}';
-    await _db.run(CollectionName.problemPaths).bulkUpsert(items: pathsJsonList);
+    await _db.run(CollectionName.problemPaths).bulkUpsert(items: pathsJsonList, idKey: ProblemPathMapper.slugKey);
   }
 
   static List<PathSection> _getPathSections(
